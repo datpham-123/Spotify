@@ -1,13 +1,20 @@
-import { Box } from '@material-ui/core';
-import { TextField } from '@material-ui/core';
+import { Box, TextField } from '@material-ui/core';
 import { useRef } from 'react';
+import { useAppDispatch } from '../app/hooks';
+import { listArtist } from '../features/artist/artistsSlice';
 
 const Header = () => {
+  const dispatch = useAppDispatch();
   const inputRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(inputRef.current?.querySelector('input')?.value);
+
+    // dispatch an action
+    const actionType = listArtist.type;
+    const actionValue = inputRef.current?.querySelector('input')?.value;
+    const action = { type: actionType, payload: actionValue };
+    dispatch(action);
   };
 
   return (

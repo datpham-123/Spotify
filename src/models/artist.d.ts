@@ -2,6 +2,6 @@ interface Artist {
   id?: string;
   name: string;
   popularity: number;
-  image: string[];
+  images: Image[];
   genres: string[];
 }

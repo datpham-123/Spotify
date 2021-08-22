@@ -1,11 +1,11 @@
 import { RootState } from './../../app/store';
 import { createSlice } from '@reduxjs/toolkit';
-interface ArtistState {
+interface ArtistsState {
   artists: Artist[];
   loading: boolean;
 }
 
-const initialState: ArtistState = {
+const initialState: ArtistsState = {
   artists: [] as Artist[],
   loading: false,
 };

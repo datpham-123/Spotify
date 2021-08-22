@@ -1,16 +1,16 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
 import createSagaMiddleware from '@redux-saga/core';
 import rootSaga from './rootSaga';
 import artistsReducer from '../features/artist/artistsSlice';
+import tracksReducer from '../features/track/tracksSlice';
 
 // create saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
     artists: artistsReducer,
+    tracks: tracksReducer,
   },
   middleware: (getDefaultMiddleware) =>
     // mount it to the store

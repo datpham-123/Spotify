@@ -1,5 +1,7 @@
 import { Box, makeStyles } from '@material-ui/core';
 import Header from './components/Header';
+import ArtistSearchResult from './features/artist';
+import TopTrack from './features/track';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +18,8 @@ function App() {
   return (
     <Box className={classes.root}>
       <Header />
+      <ArtistSearchResult />
+      <TopTrack />
     </Box>
   );
 }
